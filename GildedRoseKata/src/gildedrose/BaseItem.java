@@ -1,13 +1,11 @@
 package gildedrose;
 
-public class Item {
+public class BaseItem {
 
-	public String name;
 	public int quality;
 	public int sellIn;
 	
-	public Item (String name, int quality, int sellIn) {
-		this.name = name;
+	public BaseItem (int quality, int sellIn) {
 		this.quality = quality;
 		this.sellIn = sellIn;
 	}
@@ -29,15 +27,16 @@ public class Item {
 	}
 
 	public String getName() {
-		return name;
+		return "Base Item";
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
 	
 	public Boolean isExpired () {
 		return sellIn <= 0;
+	}
+	
+	public void update () {
+		
 	}
 	
 }

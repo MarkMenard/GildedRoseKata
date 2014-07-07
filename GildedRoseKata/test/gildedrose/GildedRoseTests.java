@@ -10,7 +10,7 @@ public class GildedRoseTests {
 	
 	private int initialQuality = 10;
 	private int initialSellIn = 5;
-	private Item item;
+	private BaseItem item;
 
 	// Normal Items
 	
@@ -290,10 +290,10 @@ public class GildedRoseTests {
 	
 	@Test
 	public void with_several_items () {
-		Item item1 = new Item ("NORMAL ITEM", 5, 10);
-		Item item2 = new Item ("Aged Brie", 3, 10);
+		BaseItem item1 = new NormalItem (5, 10);
+		BaseItem item2 = new AgedBrieItem (3, 10);
 		
-		List<Item> items = new ArrayList<Item> ();
+		List<BaseItem> items = new ArrayList<BaseItem> ();
 		items.add(item1);
 		items.add(item2);
 		
@@ -308,8 +308,8 @@ public class GildedRoseTests {
 	
 	// Helpers
 	
-	private Item buildItem (String name) {
-		this.item = new Item (name, initialQuality, initialSellIn);
+	private BaseItem buildItem (String name) {
+		this.item = ItemFactory.build(name, initialQuality, initialSellIn);
 		return this.item;
 	}
 
@@ -317,8 +317,8 @@ public class GildedRoseTests {
 		return new GildedRose ();
 	}
 	
-	private List<Item> buildList (Item item) {
-		List<Item> items = new ArrayList<> ();
+	private List<BaseItem> buildList (BaseItem item) {
+		List<BaseItem> items = new ArrayList<> ();
 		items.add(item);
 		return items;
 	}
