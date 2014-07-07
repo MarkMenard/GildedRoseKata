@@ -36,4 +36,8 @@ public class Item {
 		this.name = name;
 	}
 	
+	public Boolean isExpired () {
+		return sellIn <= 0;
+	}
+	
 }
